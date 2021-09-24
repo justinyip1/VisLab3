@@ -45,7 +45,7 @@ d3.csv('cities.csv').then(function(data) {
     euro = info.filter(c => c.eu == true);
     console.log("euro",euro);  
 }).then(function(d) {
-  d3.select('.city-count').text('The Largest European Cities: ' + euro.length);
+  d3.select('.city-count').text('The '+euro.length+' Largest European Cities: ');
 //Create svg
   const width = 700;
   const height = 550;
@@ -133,17 +133,15 @@ d3.csv('buildings.csv').then(b => {
       })
       .on("click", function(d) {
         console.log("click")
-        let data = d.path[0].__data__;
-        //let build = buildings;
-        //Image
-        console.log(1);
-        document.querySelector(".image").src = 1;
+        const data = d.path[0].__data__;
+        console.log(data,'datapath')
+        document.querySelector(".image").src = 'img/'+data.image;
         //Building name
 			  d3.select(".name")
 				  .text(d=>data.building)
 			  //Height
 			  d3.select('.height')
-				  .text(d=>data.height_ft);
+				  .text(d=>data.height_ft + ' ft');
 			  //City
 			  d3.select('.city')
 				  .text(d=>data.city);
