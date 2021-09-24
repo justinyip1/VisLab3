@@ -14,3 +14,13 @@ td {
 .image-placeholder{
     background:gray;
 }
+
+rect:hover {
+    fill:violet;
+    transition-duration: 0.3s;
+}
+
+circle:hover {
+    fill:green;
+    transition-duration:0.3s;
+}
